@@ -71,6 +71,10 @@ $ git commit -m "커밋 메세지"
 
 </br>
 
+![요약](../img/Image.png)
+
+</br>
+
 ## 6. commit 내역 확인
 
 ```
