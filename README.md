@@ -3,7 +3,6 @@
 ## What is TIL(Today I Learned)?
 
 📝 SSAFY 9기 수업을 들으며 매일 배운 내용을 기록하는 공간입니다.
-
 </br>
 
 ## What is SSAFY?
