@@ -13,7 +13,7 @@ $ git config --global user.name "이름"
 $ git config --global user.email "메일 주소"
 ```
 
-위 명령어를 통해 사용자의 이름과 메일 주소를 설정해준다.
+위 명령어를 통해 사용자의 이름과 메일 주소를 설정해준다.  
 
 ```
 $ git config --global --list
