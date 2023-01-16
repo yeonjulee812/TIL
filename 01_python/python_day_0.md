@@ -99,21 +99,7 @@
               
           - 언어별 데이터 타입 크기
               - 파이썬
-                  - int형 변수 - 4byte
-                  - float형 변수 - 8byte
-                  - string형 변수 - 알파벳은 1byte, 한글은 3byte (''와 같이 빈 문자열도 49byte 차지)
-                  - 
-                  
-                  ```python
-                  en = 'a'
-                  ko = 'ㅁ'
-                  import sys
-                  print(sys.getsizeof(en)) # 50
-                  print(sys.getsizeof(ko)) # 76
-                  ```
-                  
-                  - boolean형 변수 - 1byte
-                  
+              
                  ![Untitled](../img/Untitled.png)
                   
               - C언어, C++
@@ -125,6 +111,14 @@
                   ![Untitled](../img/Untitled_2.png)
                 
             - 파이썬이 메모리를 많이 먹는 이유? - 클래스를 사용하기 때문
+            
+            ```python
+            en = 'a'
+            ko = 'ㅁ'
+            import sys
+            print(sys.getsizeof(en)) # 50
+            print(sys.getsizeof(ko)) # 76
+            ```
             
             ```
             import sys
