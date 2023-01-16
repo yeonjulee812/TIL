@@ -7,5 +7,5 @@
 | 1.4 ~ 1.10 | Ice Breaking, 분반테스트
 | 1.11       | 파이썬 문법 기초
 | 1.12       | 마크다운, Git(Github 연동) 
-| 1.13       | API, Github 프로필 꾸미기
+| 1.13       | API, Github 프로필 꾸미기_
 
