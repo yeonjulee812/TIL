@@ -152,7 +152,7 @@
             	print('계속 반복')
             ```
             
-            ![Untitled](./../../img/day1_Untitled_2.png)
+            ![Untitled](./../img/day1_Untitled_2.png)
             
             ```python
             a=0
@@ -258,6 +258,6 @@
 - 알고리즘 순서도 그리기
     
     
-    ![Untitled](./../../img/day1_Untitled_1.png)
+    ![Untitled](./../img/day1_Untitled_1.png)
 
     참조 : [Diagram Software and Flowchart Maker](https://www.diagrams.net/)
