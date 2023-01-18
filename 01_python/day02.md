@@ -1,6 +1,3 @@
-# 1.18
-
-날짜: 2023년 1월 18일
 
 # 함수(Fuction)
 
@@ -15,6 +12,8 @@
     - 내장함수 : 파이썬에 기본적으로 포함된 함수
     - 외장함수 : Import문을 통해 사용하며, 외부 라이브러리에서 제공하는 함수
     - 사용자 정의 함수 : 직접 사용자가 만드는 함수
+
+</br>
 
 ## 함수 기본 구조
 
@@ -174,134 +173,134 @@
             - 따라서 가급적 사용하지 않는 것을 권장하며, 함수로 값을 바꾸고자 한다면 항상 argument로 넘기고 리턴 값을 사용하는 것을 추천
         - 관련 코드 예시
         
-        ```python
-        my_list = [1, 2, 3, 4]
-        
-        def func1():
-            my_list = [5, 6, 7]
-        
-        func1()
-        print(my_list)
-        
-        '''
-        [1, 2, 3, 4]
-        '''
-        
-        # 전역 변수를 함수에서 인자로 받아오더라도 함수 내에서는 지역변수(이름표)에 불과
-        # 함수 내에서 이름표를 떼서 다른 객체에 붙인다고 하더라도, 그 이름표는 함수 내에서만 사용하는 이름표일 뿐이다.
-        # 결국 함수 호출이 끝나면 전역 변수(이름표)가 여전히 그 객체에 붙어있다.
-        ```
-        
-        ```python
-        my_list = [1, 2, 3, 4]
-        
-        def func1():
-            my_list[1] = 5554
-        
-        func1()
-        print(my_list)
-        
-        '''
-        [1, 5554, 3, 4]
-        '''
-        # 주의할 점은 이름표(변수)만 떼고 붙이는 것이 아니라, 이름표가 붙여진 물건(객체)의 구성품을 직접 조작하는 경우임.
-        # 위처럼 객체 내의 요소(element)를 조작할 수 있으며, 이 경우에 함수의 호출이 끝나서 지역 이름표가 전역 이름표로 바뀐다고 하더라도
-        # 객체가 변한 상태이므로 my_list은 [1, 5554, 3, 4]가 된다.
-        
-        # 이때, 객체 자체를 바꾸려면 당연히 객체가 mutable, 즉 가변적인 포맷이어야 한다.
-        ```
-        
-        ```python
-        x = 1
-        
-        def func1():
-            x = 2
-        
-            def func2():
-                x = 3
+            ```python
+            my_list = [1, 2, 3, 4]
+            
+            def func1():
+                my_list = [5, 6, 7]
+            
+            func1()
+            print(my_list)
+            
+            '''
+            [1, 2, 3, 4]
+            '''
+            
+            # 전역 변수를 함수에서 인자로 받아오더라도 함수 내에서는 지역변수(이름표)에 불과
+            # 함수 내에서 이름표를 떼서 다른 객체에 붙인다고 하더라도, 그 이름표는 함수 내에서만 사용하는 이름표일 뿐이다.
+            # 결국 함수 호출이 끝나면 전역 변수(이름표)가 여전히 그 객체에 붙어있다.
+            ```
+            
+            ```python
+            my_list = [1, 2, 3, 4]
+            
+            def func1():
+                my_list[1] = 5554
+            
+            func1()
+            print(my_list)
+            
+            '''
+            [1, 5554, 3, 4]
+            '''
+            # 주의할 점은 이름표(변수)만 떼고 붙이는 것이 아니라, 이름표가 붙여진 물건(객체)의 구성품을 직접 조작하는 경우임.
+            # 위처럼 객체 내의 요소(element)를 조작할 수 있으며, 이 경우에 함수의 호출이 끝나서 지역 이름표가 전역 이름표로 바뀐다고 하더라도
+            # 객체가 변한 상태이므로 my_list은 [1, 5554, 3, 4]가 된다.
+            
+            # 이때, 객체 자체를 바꾸려면 당연히 객체가 mutable, 즉 가변적인 포맷이어야 한다.
+            ```
+            
+            ```python
+            x = 1
+            
+            def func1():
+                x = 2
+            
+                def func2():
+                    x = 3
+                    print(x)
+                
+                func2()
                 print(x)
             
-            func2()
+            func1()
             print(x)
-        
-        func1()
-        print(x)
-        
-        '''
-        3
-        2
-        1
-        '''
-        ```
-        
-        ```python
-        x = 1
-        
-        def func1():
-            x = 2
-        
-            def func2():
-                global x
-                x = 3 # global에 있는 x 가 3으로 바뀜
+            
+            '''
+            3
+            2
+            1
+            '''
+            ```
+            
+            ```python
+            x = 1
+            
+            def func1():
+                x = 2
+            
+                def func2():
+                    global x
+                    x = 3 # global에 있는 x 가 3으로 바뀜
+                    print(x)
+                
+                func2()
                 print(x)
             
-            func2()
+            func1()
             print(x)
-        
-        func1()
-        print(x)
-        
-        '''
-        3
-        2
-        3
-        '''
-        ```
-        
-        ```python
-        x = 1
-        
-        def func1():
-            x = 2
-        
-            def func2():
-                nonlocal x
-                x = 3 # enclosing에 있는 x 가 3으로 바뀜
-                # 나를 감싸고 있는 가장 가까운 함수의 변수값을 바꿈
+            
+            '''
+            3
+            2
+            3
+            '''
+            ```
+            
+            ```python
+            x = 1
+            
+            def func1():
+                x = 2
+            
+                def func2():
+                    nonlocal x
+                    x = 3 # enclosing에 있는 x 가 3으로 바뀜
+                    # 나를 감싸고 있는 가장 가까운 함수의 변수값을 바꿈
+                    print(x)
+                
+                func2()
                 print(x)
             
-            func2()
+            func1()
             print(x)
-        
-        func1()
-        print(x)
-        
-        '''
-        3
-        3
-        1
-        '''
-        ```
-        
-        ```python
-        def func1():
-            x = 10
-        
-            def func2():
-                nonlocal x
-                x = 20 # enclosing에 있는 x를 10->20으로 바꿈
             
-            func2()
-            print(x) # enclosing variable x인 20을 출력
-        
-        func1()
-        print(x) # global에는 x가 없음
-        
-        '''
-        20
-        NameError: name 'x' is not defined
-        '''
-        ```
+            '''
+            3
+            3
+            1
+            '''
+            ```
+            
+            ```python
+            def func1():
+                x = 10
+            
+                def func2():
+                    nonlocal x
+                    x = 20 # enclosing에 있는 x를 10->20으로 바꿈
+                
+                func2()
+                print(x) # enclosing variable x인 20을 출력
+            
+            func1()
+            print(x) # global에는 x가 없음
+            
+            '''
+            20
+            NameError: name 'x' is not defined
+            '''
+            ```
         
     - 변수의 수명주기(lifecycle)
         - Built-in scope: 파이썬이 실행된 이후부터 영원히 유지
@@ -328,11 +327,14 @@
         ```
         
 
+</br>
+
+
 ## [참고] 함수의 인자전달방식
 
 - Call by Reference vs Call by Value
     
-    ![img1.daumcdn.png](1%2018%20d8527f2dd4df41f4a395ccd857fdf88d/img1.daumcdn.png)
+    ![img1.daumcdn.png](../img/0118_01.png)
     
     - Call by Value
         - 변수를 복사한 값을 전달하는 방식
@@ -344,7 +346,7 @@
         - 가변 타입의 객체를 넘기는 경우
 - 그렇다면 파이썬은?  **“Call by assignment(Call by Object Reference)”**
     
-    ![img1.daumcdn.png](1%2018%20d8527f2dd4df41f4a395ccd857fdf88d/img1.daumcdn%201.png)
+    ![img1.daumcdn.png](../img/0118_02.png)
     
     - immutable 한 포맷의 객체(tuple 등)는 변경할 수 없지만,
     - mutable한 포맷의 객체(list, dictionary, 직접 만든 클래스 등)는 변경할 수 있다
@@ -359,9 +361,10 @@
         print(id(li2), id(li)) # 2811201764224 2811201764224
         ```
         
-- 참고 페이지
-
+- 참고 페이지 : 
 [Python - Call by Object Reference](https://foramonth.tistory.com/20)
+
+</br>
 
 ## [추가 실습] 함수 기초
 
@@ -436,55 +439,55 @@
         - global keyword : global 영역에 있는 변수를 가져와 씀
         - nonlocal keyword : 내 영역과 가장 가까운 영역의 변수를 가져와 씀(global 영역에서는 못가져옴)
         
-        ```python
-        count = 0
-        
-        def func():
-            global count
-            print('함수 호출됨')
-            count += 1
-        
-        for _ in range(5):
-            func()
-        
-        print(count)
-        
-        '''
-        함수 호출됨
-        함수 호출됨
-        함수 호출됨
-        함수 호출됨
-        함수 호출됨
-        5
-        '''
-        ```
-        
-        ```python
-        def func1():
-            x = 10
-        
-            def func2():
-                x = 20
-        
-                def func3():
-                    nonlocal x
-                    x += 10
+            ```python
+            count = 0
+            
+            def func():
+                global count
+                print('함수 호출됨')
+                count += 1
+            
+            for _ in range(5):
+                func()
+            
+            print(count)
+            
+            '''
+            함수 호출됨
+            함수 호출됨
+            함수 호출됨
+            함수 호출됨
+            함수 호출됨
+            5
+            '''
+            ```
+            
+            ```python
+            def func1():
+                x = 10
+            
+                def func2():
+                    x = 20
+            
+                    def func3():
+                        nonlocal x
+                        x += 10
+                        print(x) # 30
+                    
+                    func3()
                     print(x) # 30
                 
-                func3()
-                print(x) # 30
+                func2()
+                print(x) # 10
             
-            func2()
-            print(x) # 10
-        
-        func1() # 주의 global에는 x가 없다!
-        
-        '''
-        30
-        30
-        10
-        '''
-        ```
+            func1() # 주의 global에는 x가 없다!
+            
+            '''
+            30
+            30
+            10
+            '''
+            ```
         
     - 전역변수의 사용은 최소한으로!
     - 아스키 코드
