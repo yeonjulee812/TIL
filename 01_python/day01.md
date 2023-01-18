@@ -7,6 +7,8 @@
 - [참고] 코드 스타일 가이드(python)
     - 들여쓰기 시 space키 4번 혹은 Tab키 1번을 입력하되, 한 코드 안에서는 반드시 한 종류의 들여쓰기를 사용
     - 원칙적으로는 공백 사용을 권장(PEP8)
+    - Never use the characters ‘l’ (lowercase letter el), ‘O’ (uppercase letter oh), or ‘I’ (uppercase letter eye) as single character variable names. (When tempted to use ‘l’, use ‘L’ instead.)
+    - 특정 자료형의 명칭을 식별자로 하지 말 것(ex. list 대신 ls, dict 대신 di 사용)
     
         [PEP 8 - Style Guide for Python Code](https://peps.python.org/pep-0008/)
     
@@ -80,7 +82,7 @@
 - 특정 조건을 만족할 때까지 같은 동작을 계속 반복하고 싶을 때 사용
 - for문과 while문이 있으며 for문으로 표현할 수 있는 것은 while문으로도 표현가능하며, 반대의 경우도 동일
 - 다만 for문은 **“반복 횟수를 알고 있을 때”,** while문은 **“조건이 존재할 때”** 용이함
-    - for문은 반복가능한 객체를 모두 순회하면 종료(별도의 종료 조건이 필요 없음)되는 반면, while문은 종료 조건에 해당하는 코드를 통해 반복문을 종료시켜야 함**(반드시 종료조건 설정해야 함)**
+    - for문은 반복가능한 객체를 모두 순회하면 종료(별도의 종료 조건이 필요 없음)되는 반면, while문은 종료 조건에 해당하는 코드를 통해 반복문을 종료시켜야 함(**반드시 종료조건 설정해야 **함)
     - 반복문 제어
         - break: 반복문 종료
             
