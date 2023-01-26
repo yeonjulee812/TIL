@@ -255,7 +255,7 @@
 
             print(f"char: {char_count}, digit: {digit_count}, symbol: {symbol_count}")
             
-            ```
+        ```
 
 
     - 추가적으로 `하노이의 탑` 문제도 재귀 호출 연습에 좋습니다.  
