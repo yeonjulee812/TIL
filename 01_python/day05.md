@@ -224,6 +224,39 @@
             def gcd(a, b):
                 return gcd(b, a % b) if b != 0 else a
             ```
+    
+    - 예제
+      - 알파벳, 숫자, 문자의 갯수 찾기
+    
+        ```python
             
+            def check(input_str):
+                char_count = 0
+                digit_count = 0
+                symbol_count = 0
+
+                for char in input_str:
+                    if char.isalpha():
+                        char_count += 1
+                    elif char.isdigit():
+                        digit_count += 1
+                    else:
+                        symbol_count += 1
+                    
+                return char_count, digit_count, symbol_count
+
+            input_str = '123124#$@aiden_snow'
+            rlt = check(input_str=input_str) # Keyword argument
+            rlt = check(input_str) #Positional argument
+            print(rlt)
+
+            char_count, digit_count, symbol_count = check(input_str)
+            print(char_count)
+
+            print(f"char: {char_count}, digit: {digit_count}, symbol: {symbol_count}")
+            
+            ```
+
+
     - 추가적으로 `하노이의 탑` 문제도 재귀 호출 연습에 좋습니다.  
     나중에 배우게 될 `dfs 알고리즘` 에서 재귀 호출이 핵심적으로 사용되니, 반드시 알아둡시다 !
