@@ -1,7 +1,7 @@
 
 ## 문제 A. 제공되는 영화 데이터의 인기 영화 조회
 
-[problem_a.py](./problem_a.py)
+[problem_a.py](./day07_pjt/code/problem_a.py)
 
 <details>
 <summary>접기/펼치기 버튼</summary>
@@ -20,7 +20,7 @@
 
 ## 문제 B. 특정 조건에 맞는 인기 영화 조회
 
-[problem_b.py](./problem_b.py)
+[problem_b.py](./day07_pjt/code/problem_b.py)
 
 <details>
 <summary>접기/펼치기 버튼</summary>
@@ -36,7 +36,7 @@
 
 ## 문제 C. 특정 조건에 맞는 인기 영화 정렬
 
-[problem_c.py](./problem_c.py)
+[problem_c.py](./day07_pjt/code/problem_c.py)
 
 <details>
 <summary>접기/펼치기 버튼</summary>
@@ -53,7 +53,7 @@
 
 ## 문제 D. 영화 검색 후 id 값으로 추천영화 조회
 
-[problem_d.py](./problem_d.py)
+[problem_d.py](./day07_pjt/code/problem_d.py)
 
 <details>
 <summary>접기/펼치기 버튼</summary>
@@ -92,7 +92,7 @@
 
 ## 문제 E. 영화 검색 후 특정 조건에 맞는 출연진 조회
 
-[problem_e.py](./problem_e.py)
+[problem_e.py](./day07_pjt/code/problem_e.py)
 
 <details>
 <summary>접기/펼치기 버튼</summary>
