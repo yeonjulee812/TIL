@@ -185,7 +185,7 @@
             
             ```python
             # key 활용
-            grades = ('john':80, 'eric':90}
+            grades = {'john':80, 'eric':90}
             for student in grades:
             	print(student, grades[student])
             
