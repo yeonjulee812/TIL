@@ -102,6 +102,18 @@
             ```
             
         - **continue: continue 이후의 코드 블록은 수행하지 않고, “다음 반복”을 수행**
+            ```python          
+            for i in range(4):
+            	if i ==2:
+            		continue
+            	print(i)
+            
+            '''
+            0
+            1
+            3
+            '''
+            ```
         - for-else: 끝까지 반복문을 실행한 이후에  else문 실행되며, break를 통해 중간에 종료되는 경우 else문은 실행되지 않음
             
             ```python
@@ -125,17 +137,6 @@
             0
             1
             2
-            3
-            '''
-            
-            for i in range(4):
-            	if i ==2:
-            		continue
-            	print(i)
-            
-            '''
-            0
-            1
             3
             '''
             ```
