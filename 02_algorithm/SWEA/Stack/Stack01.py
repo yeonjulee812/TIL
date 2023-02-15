@@ -91,3 +91,37 @@ for _ in range(1, 11):
     b, e = map(int, input().split())
 
     print(f'#{tc}', sq(b, e))
+
+# Forth
+
+T = int(input())
+for tc in range(1, T+1):
+    li = input().split()
+    stack = []
+
+    for i in li:
+        if i == '.': # 코드 종료
+            if len(stack) > 1: # . 이후에도 스택에 두 개 이상의 피연산자가 남아있으면 에러
+                result = 'error'
+            else: # 정상종료
+                result = stack.pop()
+            break
+        elif i.isdigit(): # 숫자이면
+            stack.append(int(i))
+        else: # 연산자이면
+            if len(stack) > 1: # 연산가능한 경우
+                b = stack.pop()
+                a = stack.pop()
+                if i == '+':
+                    stack.append(a+b)
+                elif i == '-':
+                    stack.append(a-b)
+                elif i == '*':
+                  stack.append(a*b)
+                elif i == '/':
+                    stack.append(int(a/b))
+            else: # 연산불가능한 경우
+                result = 'error'
+                break
+
+    print(f'#{tc}', result)
