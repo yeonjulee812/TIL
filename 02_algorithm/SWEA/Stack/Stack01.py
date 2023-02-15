@@ -125,3 +125,37 @@ for tc in range(1, T+1):
                 break
 
     print(f'#{tc}', result)
+
+# 계산기1
+
+for tc in range(1, 11):
+    N = int(input())
+    li = list(input())
+    stack = []
+    postfix = ''
+
+    # 후위표기식으로 변환
+    for i in li:
+        if i.isdigit(): # 숫자이면
+            postfix += i # 출력
+        else: # + 연산자가 나오면
+            if not stack: # 스택이 비어있으면
+                stack.append(i)
+            else:
+                postfix += stack.pop() # 스택 안에 있는 거 꺼내고
+                stack.append(i) # 스택에 넣기
+
+    while stack: # 스택에 연산자가 남아있으면
+        postfix += stack.pop() # 꺼내기
+
+    # 후위표기식을 계산
+    calc_stack = []
+    for i in postfix:
+        if i.isdigit():
+            calc_stack.append(int(i))
+        else:
+            b = calc_stack.pop()
+            a = calc_stack.pop()
+            calc_stack.append(a+b)
+
+    print(f'#{tc}', calc_stack.pop())
