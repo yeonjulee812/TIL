@@ -203,7 +203,7 @@ print(f(0, N, key)) # 1
 
 - 백트래킹 활용
     
-![Untitled](..\img\0216.png)
+![Untitled](../img/0216.png)
     
 ```python
     def f(i, k, s, t): # i원소, k 집합의 크기, s i-1까지 고려된 원소의 합, t 목표
@@ -240,7 +240,7 @@ print(f(0, N, key)) # 1
 
 - 추가 고려 사항
     
-    ![Untitled](..\img\0216_1.png)
+    ![Untitled](../img/0216_1.png)
     
     전체 합을 처음에 구해놓고 진행
     
@@ -249,9 +249,9 @@ print(f(0, N, key)) # 1
 
 - [참고] 순열
     
-    ![Untitled](..\img\0216_2.png)
+    ![Untitled](../img/0216_2.png)
     
-    ![Untitled](..\img\0216_3.png)
+    ![Untitled](../img/0216_3.png)
     
 ```python
     def f(i, k):
@@ -283,7 +283,7 @@ print(f(0, N, key)) # 1
 
 - 예제: 거듭제곱(Exponentiation)
     
-    ![Untitled](..\img\0216_4.png)
+    ![Untitled](../img/0216_4.png)
     
 ```python
     def Power(Base, Exponent):
@@ -295,7 +295,7 @@ print(f(0, N, key)) # 1
         return result
 ```
     
-    ![Untitled](..\img\0216_5.png)
+    ![Untitled](../img/0216_5.png)
     
 ```python
     def Power(Base, Exponent):

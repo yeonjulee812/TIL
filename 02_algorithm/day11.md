@@ -99,7 +99,7 @@
 
     - 구조
         
-        ![Untitled](..\img\0220.png)
+        ![Untitled](../img/0220.png)
         
         - 초기 공백상태
             - 크기 n인 1차원 배열 생성
@@ -111,20 +111,20 @@
             - 공백 상태와 포화 상태 구분을 쉽게 하기 위해 front가 있는 자리는 사용하지 않고 항상 **빈자리**로 둠
             - 삽입 위치 및 삭제 위치
                 
-                ![Untitled](..\img\0220_1.png)
+                ![Untitled](../img/0220_1.png)
                 
         - 공백상태 및 포화상태 검사
             
-            ![Untitled](..\img\0220_2.png)
+            ![Untitled](../img/0220_2.png)
             
         - 삽입
             
-            ![Untitled](..\img\0220_3.png)
+            ![Untitled](../img/0220_3.png)
             
         - 삭제
             
-            ![Untitled](..\img\0220_4.png)
+            ![Untitled](../img/0220_4.png)
             
         - 공백 및 포화상태 검사
             
-            ![Untitled](..\img\0220_5.png)
+            ![Untitled](../img/0220_5.png)

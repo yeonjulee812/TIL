@@ -7,7 +7,7 @@
 - 함수에서 실행해야 하는 작업의 특성에 따라 일반적인 호출방식보다 재귀호출방식을 사용하여 함수를 만들면 프로그램의 크기를 줄이고 간단하게 작성
 - 엄청난 중복 호출이 존재한다는 단점
     
-    ![Untitled](..\img\0214.png)
+    ![Untitled](../img/0214.png)
     
 
 - 실습코드1 - 리스트 복사 및 탐색
@@ -324,7 +324,7 @@ for i in range(E):
             v1, v2 = arr[i][0], arr[i][1]
             adjM[v1][v2] = 1  # 유향 그래프
     
-        # print(*adjM, sep='\n')
+        # print(*adjM, sep='/n')
         stack = [0 for _ in range(V+1)]
         v = S # node
         visited = [0 for _ in range(V+1)] # visited
