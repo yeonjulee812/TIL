@@ -1,5 +1,5 @@
 # 4869. 종이붙이기
-```
+```python
 T = int(input())
 
 def rec(N):
@@ -16,7 +16,7 @@ for tc in range(1, T+1):
 ```
 
 # 4871. 그래프 경로
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     V, E = map(int, input().split())
@@ -55,7 +55,7 @@ for tc in range(1, T+1):
 ```
 
 # 길찾기
-```
+```python
 for _ in range(10):
     tc, r = map(int, input().strip().split())
     arr = list(map(int, input().strip().split()))
@@ -92,7 +92,7 @@ for _ in range(10):
 ```
 
 # 미로
-```
+```python
 def findaway(i, j):
     di = [-1, 0, 0, 1]  # 상좌우하
     dj = [0, -1, 1, 0]

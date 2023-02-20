@@ -1,5 +1,5 @@
 # 4835. 구간합
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N, M = map(int, input().split())
@@ -22,7 +22,7 @@ for tc in range(1, T+1):
 ```
 
 # 4828. min max
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
@@ -41,7 +41,7 @@ for tc in range(1, T+1):
 ```
 
 # 10548. Gravity
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
@@ -63,7 +63,7 @@ for tc in range(1, T+1):
 ```
 
 # 1966. 숫자를 정렬하자
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
@@ -78,7 +78,7 @@ for tc in range(1, T+1):
 ```
 
 # 1206. View
-```
+```python
 for tc in range(1, 11):
 	N = int(input())
 	arr = list(map(int, input().split()))
@@ -99,7 +99,7 @@ for tc in range(1, 11):
 ```
 
 # 4834. 숫자 카드
-```
+```python
 T = int(input())
 
 for tc in range(1, T+1):
@@ -119,7 +119,7 @@ for tc in range(1, T+1):
 ```
 
 # 4831. 전기버스
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     K, N, M = map(int, input().split())
@@ -154,7 +154,7 @@ for tc in range(1, T+1):
 ```
 
 # 1208. Flatten
-```
+```python
 for tc in range(1,11):
     D = int(input())
     li = list(map(int, input().split()))
@@ -188,7 +188,7 @@ for tc in range(1,11):
 ```
 
 # 9386. 연속한 1의 개수
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())

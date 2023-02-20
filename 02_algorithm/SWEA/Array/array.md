@@ -1,5 +1,5 @@
 # 10760. 우주선착륙2
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N, M = map(int, input().split())
@@ -25,7 +25,7 @@ for tc in range(1, T+1):
 ```
 
 # 9489. 고대유적
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N, M = map(int, input().split())
@@ -59,7 +59,7 @@ for tc in range(1, T+1):
     print(f'#{tc} {maxV}')
 ```
 
-```
+```python
 # 강사님 코드 참고
 # import sys
 # sys.stdin = open("input_01.txt", "r")
@@ -90,7 +90,7 @@ for tc in range(1, T+1):
 ```
 
 # 5432. 쇠막대기 자르기
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     s = input()
@@ -109,7 +109,7 @@ for tc in range(1, T+1):
 ```
 
 # 4615. 재미있는 오셀로 게임
-```
+```python
 T = int(input())
 for tc in range(1, T + 1):
     N, M = map(int, input().split())
@@ -150,7 +150,7 @@ for tc in range(1, T + 1):
 ```
 
 # 4408. 자기 방으로 돌아가기
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
@@ -172,7 +172,7 @@ for tc in range(1, T+1):
 ```
 
 # 1859. 백만장자 프로젝트
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
@@ -187,7 +187,7 @@ for tc in range(1, T+1):
     print(f'#{tc} {s}')
 ```
 
-```
+```python
 # 강사님 코드 참고
 # 풀이 1 - O(n^2)
 T = int(input())

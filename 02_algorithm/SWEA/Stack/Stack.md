@@ -1,5 +1,5 @@
 # 4866. 괄호검사
-```
+```python
 T = int(input())
 
 open_li = ['(', '{', '[']
@@ -29,7 +29,7 @@ for tc in range(1, T+1):
 ```
 
 # 4873. 반복문자 지우기
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     s = input()
@@ -48,7 +48,7 @@ for tc in range(1, T+1):
 ```
 
 # 2005. 파스칼의 삼각형
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
@@ -65,7 +65,7 @@ for tc in range(1, T+1):
 ```
 
 # 1234. 비밀번호
-```
+```python
 for tc in range(1, 11):
     l, s = map(str, input().split())
     stack = [0] * 100
@@ -83,7 +83,7 @@ for tc in range(1, 11):
 ```
 
 # 1217. 거듭제곱
-```
+```python
 def sq(b, e):
     if e == 1:
         return b
@@ -98,7 +98,7 @@ for _ in range(1, 11):
 ```
 
 # Forth
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     li = input().split()
@@ -133,7 +133,7 @@ for tc in range(1, T+1):
 ```
 
 # 계산기1
-```
+```python
 for tc in range(1, 11):
     N = int(input())
     li = list(input())
@@ -168,7 +168,7 @@ for tc in range(1, 11):
 ```
 
 # 4881. 배열 최소합
-```
+```python
 def f(i, k):
     global minsum
     if i == k:
@@ -184,7 +184,7 @@ def f(i, k):
             f(i+1, k) # 결정된 자리 다음부터의 경우의 수
             p[i], p[j] = p[j], p[i] # 원상복구
 ```
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
@@ -196,7 +196,7 @@ for tc in range(1, T+1):
 ```
 
 # 4880. 토너먼트 카드게임
-```
+```python
 def game(i, j): # 한 팀씩 뽑아주자
     if i == j:
         return i
@@ -217,7 +217,7 @@ def winner(a, b): # 둘이서 가위바위보
         elif (B, A) == p:
             return a if p.index(v) else b
 ```
-```
+```python
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
@@ -226,7 +226,7 @@ for tc in range(1, T+1):
 ```
 
 # 계산기 2
-```
+```python
 for tc in range(1, 11):
     N = int(input())
     li = list(input())
