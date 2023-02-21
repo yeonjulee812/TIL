@@ -107,3 +107,105 @@ for tc in range(1, T+1):
                 dough += 1              # 다음에 투입할 피자
     print(f'#{tc} {door+1}')
 ```
+
+# 5102. 노드의 거리
+```python
+def bfs(s, g, adj):
+    visited = [0]*(V+1)
+    queue = []
+    queue.append(s) # 출발점 인큐
+    visited[s] = 1 # 출발점 인큐표시
+    while queue:
+        t = queue.pop(0) # 하나 디큐해본 후
+        for i in adj[t]: # 방문안한 인접점이 있으면
+            if not visited[i]:
+                queue.append(i) # 인큐
+                visited[i] = visited[t] + 1 # 인큐표시(거리만큼)
+    return 0 if visited[g] == 0 else visited[g] - 1
+
+T = int(input())
+for tc in range(1, T+1):
+    V, E = map(int, input().split()) # V 노드 개수, E 간선 정보 개수
+    adjL = [[] for _ in range(V+1)] # 인접 리스트
+    for _ in range(E):
+        n1, n2 = map(int, input().split())
+        adjL[n1].append(n2)
+        adjL[n2].append(n1) # 방향성 없음
+
+    S, G = map(int, input().split()) # S 출발노드, G 도착노드
+    print(f'#{tc} {bfs(S, G, adjL)}')
+
+```
+
+# 5105. 미로
+```python
+di = [-1, 1, 0, 0] # 상하좌우
+dj = [0, 0, -1, 1]
+
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    maze = [list(map(int, input())) for _ in range(N)] # 미로
+    visited = [[0] * N for _ in range(N)]  # 방문 표시
+    queue = [] # 큐 생성
+    for i in range(N):
+        for j in range(N):
+            if maze[i][j] == 2:
+                queue.append((i, j)) # 출발점 인큐
+                visited[i][j] = 1 # 출발점 인큐표시
+            elif maze[i][j] == 3:
+                si, sj = i, j # 도착점 인덱스 추출
+    while queue:
+        (i, j) = queue.pop(0) # 디큐
+        for dir in range(4):
+            ni, nj = i+di[dir], j+dj[dir] # 상하좌우로 인접한 영역 중에서
+            if 0<=ni<N and 0<=nj<N and maze[ni][nj] != 1:
+                if not visited[ni][nj]: # 길이고 방문안한 정점이 있으면
+                    queue.append((ni, nj)) # 인큐
+                    visited[ni][nj] = visited[i][j] + 1 # 방문 표시
+
+    ans = visited[si][sj]-2 if visited[si][sj]>=1 else 0 # 경로 없으면 0 주의
+    print(f'#{tc} {ans}')
+```
+
+```python
+# 참고 코드(BFS 기본형)
+def bfs(i, j, N):
+    visited = [[0]*N for _ in range(N)] # 인큐 확인배열
+    q = [(i,j)]             # 큐 생성, 시작점 인큐
+    visited[i][j] = 1       # 시작점 표시
+    while q:                # 큐가 비어있지 않으면
+        i, j = q.pop(0)
+        if maze[i][j]=='3': # i,j가 도착지인가?
+            return visited[i][j] - 2
+        for di, dj in [[0,1],[1,0],[0,-1],[-1,0]]:
+            ni, nj = i+di, j+dj
+            if 0<=ni<N and 0<=nj<N and maze[ni][nj]!='1' and visited[ni][nj]==0: # 벽이 아니고, 인큐한 적 없으면
+                q.append((ni,nj))
+                visited[ni][nj] = visited[i][j] + 1
+    return 0        # '3'칸에 못가는 경우
+ 
+def findStart(N):
+    for i in range(N):
+        for j in range(N):
+            if maze[i][j]=='2':
+                return i, j
+    return -1, -1       # return 형식 맞추기용
+ 
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    maze = [input() for _ in range(N)]
+ 
+    # si = sj = -1
+    # for i in range(N):
+    #     for j in range(N):
+    #         if maze[i][j]=='2':
+    #             si, sj = i, j
+    #             break
+    #     if si!=-1:
+    #         break
+    si, sj = findStart(N)
+ 
+    print(f'#{tc} {bfs(si, sj, N)}')
+```
