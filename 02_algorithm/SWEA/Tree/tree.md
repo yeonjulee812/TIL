@@ -1,5 +1,12 @@
 # 5174. subtree
 ```python
+def pre(T): # 전위순회
+    global cnt
+    if T:
+        cnt += 1
+        pre(c1[T])
+        pre(c2[T])
+
 T = int(input())
 for tc in range(1, T+1):
     E, N = map(int, input().split()) # E 간선, N 루트 노드번호
@@ -17,17 +24,10 @@ for tc in range(1, T+1):
 
     #자손노드 개수 찾기
     cnt = 0
-    def pre(T): # 전위순회
-        global cnt
-        if T:
-            cnt += 1
-            pre(c1[T])
-            pre(c2[T])
-
     pre(N)
+
     print(f'#{tc} {cnt}')
 ```
-
 
 # 1231. 중위순회
 ```python
