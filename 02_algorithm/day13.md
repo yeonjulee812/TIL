@@ -116,4 +116,41 @@
         - 편향 이진 트리의 경우 사용하지 않는 배열 원소에 대한 메모리 공간 낭비 발생
         - 트리의 중간에 새로운 노드를 삽입하거나 기존의 노드를 삭제할 경우 배열의 크기 변경 어려워 비효율적
 
+
+
+- 코드 구현
+```python
+'''
+13
+1 2 1 3 2 4 3 5 3 6 4 7 5 8 5 9 6 10 6 11 7 12 11 13
+'''
+def pre(i):
+    if i>0:
+        print(i, end = ' ')
+        pre(left[i])        # 왼쪽 자식으로 이동
+        pre(right[i])       # 오른쪽 자식으로 이동
+
+
+V = int(input())
+arr = list(map(int, input().split()))
+E = V - 1           # 이진트리의 간선 수 = 정점 수 - 1
+left = [0] * (V+1)
+right = [0] * (V+1)
+par = [0] * (V+1)
+
+for i in range(E):
+    p, c = arr[i*2], arr[i*2+1]
+    if left[p] == 0:        # 부모를 인덱스로 자식번호 저장
+        left[p] = c
+    else:
+        right[p] = c
+    par[c] = p              # 자식을 인덱스로 부모 번호 저장
+
+
+root = 1        # 루트 찾기
+while root<V and par[root] != 0:
+    root += 1
+
+pre(root)
+print()
 ```

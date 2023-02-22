@@ -69,3 +69,23 @@ for tc in range(1, T+1):
     f(1,N)
     print(f'#{tc} {tree[1]} {tree[N//2]}')
 ```
+
+```python
+# 참고 코드
+def f(i, a, N): # a 첫번째 왼쪽 조상의 값
+    if i > N:
+        return 0
+    else:
+        l = f(i*2, a, N)    # 왼쪽 서브트리로 갈때는 a전달
+        tree[i] = l+a+1
+        r = f(i*2+1, tree[i], N) # 오른쪽 서브트리고 갈때는 i가 왼쪽 조상
+        return l+r+1
+
+
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    tree = [0]*(N+1)
+    f(1, 0, N)
+    print(f'#{tc} {tree[1]} {tree[N//2]} {tree}')
+```
