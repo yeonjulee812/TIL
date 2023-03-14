@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>first 페이지</h1>
+
+  {% for menu in menus %}
+  <p>{{forloop.counter0}}번째 메뉴 : {{menu}}</p>
+  {% endfor %}
+
+  <!-- DTL(Django Template Language, Django html) -->
+</body>
+</html>
