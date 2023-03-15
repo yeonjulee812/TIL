@@ -1,0 +1,17 @@
+.redbox {
+  width: 500px;
+  height: 75px;
+  background-color: red;
+  color: white;
+  text-align: left;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  border-radius: 7px;
+}
+
+h1 {
+  font-weight: bold;
+  padding-top: 20px;
+
+}
